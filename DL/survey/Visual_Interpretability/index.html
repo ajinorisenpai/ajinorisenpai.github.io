@@ -1,0 +1,2150 @@
+
+
+
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
+      
+        <meta name="lang:clipboard.copied" content="コピーしました">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="何も見つかりませんでした">
+      
+        <meta name="lang:search.result.one" content="1件見つかりました">
+      
+        <meta name="lang:search.result.other" content="#件見つかりました">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Visual_Interpretability - ノート</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#visual_interpretability" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="ノート" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              ノート
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Visual_Interpretability
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            検索キーワードを入力してください
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="ノート" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    ノート
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="サイトマップ" class="md-nav__link">
+      サイトマップ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      DL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        DL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Survey
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Survey
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Visual_Interpretability
+      </label>
+    
+    <a href="./" title="Visual_Interpretability" class="md-nav__link md-nav__link--active">
+      Visual_Interpretability
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visualinterpretability-for-deep-learning-a-survey" title="VisualInterpretability for Deep Learning: a Survey" class="md-nav__link">
+    VisualInterpretability for Deep Learning: a Survey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" title="Abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-visualization-of-cnn-representations" title="2 Visualization of CNN representations" class="md-nav__link">
+    2 Visualization of CNN representations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-diagnosis-of-cnn-representations" title="3 Diagnosis of CNN representations" class="md-nav__link">
+    3 Diagnosis of CNN representations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-disentangling-cnn-representations-into-explanatory-graphs-decision-trees" title="4 Disentangling CNN representations into explanatory graphs &amp; decision trees" class="md-nav__link">
+    4 Disentangling CNN representations into explanatory graphs &amp; decision trees
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-disentangling-cnn-representations-into-explanatory-graphs" title="4.1 Disentangling CNN representations into explanatory graphs" class="md-nav__link">
+    4.1 Disentangling CNN representations into explanatory graphs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-disentangling-cnn-representations-into-decision-trees" title="4.2 Disentangling CNN representations into decision trees" class="md-nav__link">
+    4.2 Disentangling CNN representations into decision trees
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-learning-neural-networks-with-interpretabledisentangled-representations" title="5 Learning neural networks with interpretable/disentangled representations" class="md-nav__link">
+    5 Learning neural networks with interpretable/disentangled representations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-evaluation-metrics-for-network-interpretability" title="6 Evaluation metrics for network interpretability" class="md-nav__link">
+    6 Evaluation metrics for network interpretability
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-filter-interpretability" title="6.1 Filter interpretability" class="md-nav__link">
+    6.1 Filter interpretability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-location-instability" title="6.2 Location instability" class="md-nav__link">
+    6.2 Location instability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-network-interpretability-for-middle-to-end" title="7 Network interpretability for middle-to-end" class="md-nav__link">
+    7 Network interpretability for middle-to-end
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Diary
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Diary
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../diary/8月/" title="8月" class="md-nav__link">
+      8月
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Lecture
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Lecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1">
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Robo
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        Robo
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../lecture/robo/what is intristic motivation/" title="What is intrinsic motivation? A typology of computational approaches" class="md-nav__link">
+      What is intrinsic motivation? A typology of computational approaches
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Procon
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Procon
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../procon/メモ/" title="メモ" class="md-nav__link">
+      メモ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Tech
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Tech
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tech/mkdocs/" title="mkdocsのインストール&設定" class="md-nav__link">
+      mkdocsのインストール&設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tech/メモリ/" title="メモリ" class="md-nav__link">
+      メモリ
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Wiki
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Wiki
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/attention/" title="Attentionという技法について" class="md-nav__link">
+      Attentionという技法について
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/clion/" title="Clion ショートカット" class="md-nav__link">
+      Clion ショートカット
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/emacs/" title="emacsのセッティング関連" class="md-nav__link">
+      emacsのセッティング関連
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/fzf/" title="fzfの使い方" class="md-nav__link">
+      fzfの使い方
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/git/" title="git操作の基本" class="md-nav__link">
+      git操作の基本
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/latex/" title="latexコマンド" class="md-nav__link">
+      latexコマンド
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/terminal/" title="ターミナルの設定とか" class="md-nav__link">
+      ターミナルの設定とか
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/zsh/" title="zshの設定" class="md-nav__link">
+      zshの設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-9" type="checkbox" id="nav-7-9">
+    
+    <label class="md-nav__link" for="nav-7-9">
+      Deeplearning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-9">
+        Deeplearning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/deeplearning/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/deeplearning/LSTM/" title="LSTM (Long short-term memory)" class="md-nav__link">
+      LSTM (Long short-term memory)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/deeplearning/RNN/" title="RNN (Recurrent Neural Network)" class="md-nav__link">
+      RNN (Recurrent Neural Network)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/deeplearning/adversarial attack/" title="Adversarial Attack" class="md-nav__link">
+      Adversarial Attack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/deeplearning/attention/" title="Attention" class="md-nav__link">
+      Attention
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-10" type="checkbox" id="nav-7-10">
+    
+    <label class="md-nav__link" for="nav-7-10">
+      Heroku
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-10">
+        Heroku
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/heroku/heroku/" title="インストール" class="md-nav__link">
+      インストール
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/heroku/postgresql/" title="postgresql" class="md-nav__link">
+      postgresql
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-11" type="checkbox" id="nav-7-11">
+    
+    <label class="md-nav__link" for="nav-7-11">
+      Javascript
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-11">
+        Javascript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/javascript/array/" title="javascript 配列基本" class="md-nav__link">
+      javascript 配列基本
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/javascript/css/" title="css基礎" class="md-nav__link">
+      css基礎
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/javascript/d3js/" title="d3js基本" class="md-nav__link">
+      d3js基本
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/javascript/html/" title="HTMLの基礎" class="md-nav__link">
+      HTMLの基礎
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/javascript/method_chain/" title="javascript メソッドチェーン" class="md-nav__link">
+      javascript メソッドチェーン
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/javascript/string/" title="javascript 文字列" class="md-nav__link">
+      javascript 文字列
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-12" type="checkbox" id="nav-7-12">
+    
+    <label class="md-nav__link" for="nav-7-12">
+      Procon
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-12">
+        Procon
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/procon/next_permutation/" title="next_permutation" class="md-nav__link">
+      next_permutation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/procon/pair/" title="pairのソート" class="md-nav__link">
+      pairのソート
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/procon/sort/" title="構造体のそーと" class="md-nav__link">
+      構造体のそーと
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-13" type="checkbox" id="nav-7-13">
+    
+    <label class="md-nav__link" for="nav-7-13">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-13">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/python/anaconda/" title="Anaconda" class="md-nav__link">
+      Anaconda
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/python/env/" title="pythonの環境構築関連" class="md-nav__link">
+      pythonの環境構築関連
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/python/pandas_concat/" title="pandas concatenate 連結" class="md-nav__link">
+      pandas concatenate 連結
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/python/pandas_csv/" title="Pandas csv" class="md-nav__link">
+      Pandas csv
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/python/pandas_split/" title="Pandas split" class="md-nav__link">
+      Pandas split
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/python/pandas_unique/" title="Pandas unique" class="md-nav__link">
+      Pandas unique
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/python/python_set/" title="pythonのset" class="md-nav__link">
+      pythonのset
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-14" type="checkbox" id="nav-7-14">
+    
+    <label class="md-nav__link" for="nav-7-14">
+      Scoop
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-14">
+        Scoop
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/scoop/" title="windowsでのパッケージ管理システムScoop" class="md-nav__link">
+      windowsでのパッケージ管理システムScoop
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7-15" type="checkbox" id="nav-7-15">
+    
+    <label class="md-nav__link" for="nav-7-15">
+      Term
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-7-15">
+        Term
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/term/スタック/" title="スタックについて" class="md-nav__link">
+      スタックについて
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../wiki/term/メモリ/" title="メモリについて" class="md-nav__link">
+      メモリについて
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#visualinterpretability-for-deep-learning-a-survey" title="VisualInterpretability for Deep Learning: a Survey" class="md-nav__link">
+    VisualInterpretability for Deep Learning: a Survey
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#abstract" title="Abstract" class="md-nav__link">
+    Abstract
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-visualization-of-cnn-representations" title="2 Visualization of CNN representations" class="md-nav__link">
+    2 Visualization of CNN representations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-diagnosis-of-cnn-representations" title="3 Diagnosis of CNN representations" class="md-nav__link">
+    3 Diagnosis of CNN representations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-disentangling-cnn-representations-into-explanatory-graphs-decision-trees" title="4 Disentangling CNN representations into explanatory graphs &amp; decision trees" class="md-nav__link">
+    4 Disentangling CNN representations into explanatory graphs &amp; decision trees
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-disentangling-cnn-representations-into-explanatory-graphs" title="4.1 Disentangling CNN representations into explanatory graphs" class="md-nav__link">
+    4.1 Disentangling CNN representations into explanatory graphs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-disentangling-cnn-representations-into-decision-trees" title="4.2 Disentangling CNN representations into decision trees" class="md-nav__link">
+    4.2 Disentangling CNN representations into decision trees
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-learning-neural-networks-with-interpretabledisentangled-representations" title="5 Learning neural networks with interpretable/disentangled representations" class="md-nav__link">
+    5 Learning neural networks with interpretable/disentangled representations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-evaluation-metrics-for-network-interpretability" title="6 Evaluation metrics for network interpretability" class="md-nav__link">
+    6 Evaluation metrics for network interpretability
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-filter-interpretability" title="6.1 Filter interpretability" class="md-nav__link">
+    6.1 Filter interpretability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-location-instability" title="6.2 Location instability" class="md-nav__link">
+    6.2 Location instability
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-network-interpretability-for-middle-to-end" title="7 Network interpretability for middle-to-end" class="md-nav__link">
+    7 Network interpretability for middle-to-end
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="visual_interpretability">Visual_Interpretability</h1>
+<h2 id="visualinterpretability-for-deep-learning-a-survey">VisualInterpretability for Deep Learning: a Survey</h2>
+<p>Quan-shi ZHANG, Song-chun ZHU</p>
+<h2 id="abstract">Abstract</h2>
+<blockquote>
+<p>This paper reviews recent studies in understanding neural-network representations and learning neural networks with interpretable/disentangled middlelayer representations.
+Although deep neural networks have exhibited superior performance in various tasks, the interpretability is always the Achilles’ heel of deep neural networks.</p>
+</blockquote>
+<p>本稿では、ニューラルネットワークの表現を理解するための最近の研究を解説する．また，解釈可能な絡まっていない中層表現を用いてニューラルネットワークを学ぶ．
+ディープニューラルネットワークは様々なタスクにおいて優れた性能を発揮したが、解釈性は常にディープニューラルネットワークの弱点である。</p>
+<blockquote>
+<p>At present, deep neural networks obtain high discrimination power at the cost of low interpretability of their black-box representations.</p>
+</blockquote>
+<p>現在、ディープニューラルネットワークは、ブラックボックスな表現からくる解釈性の低さを犠牲にして、高い識別力を得ている。</p>
+<blockquote>
+<p>We believe that high model interpretability may help people to break several bottlenecks of deep learning, e.g. learning from very few annotations, learning via human-computer communications at the semantic level, and semantically debugging network representations.</p>
+</blockquote>
+<p>私たちは解釈能力の高いモデルは、人々が深い学習のいくつかのボトルネックを解消するのに役立つかもしれないと考えている。 非常に少数の注釈からの学習、意味レベルでの人間と機械の会話からの学習、および意味論的なネットワーク表現のデバッグ。</p>
+<blockquote>
+<p>We focus on convolutional neural networks (CNNs), and we revisit the visualization of CNN representations, methods of diagnosing representations of pre-trained CNNs, approaches for disentangling pre-trained CNN representations, learning of CNNs with disentangled representations, and middle-to-end learning based on model interpretability.
+Finally, we discuss prospective trends in explainable artificial intelligence.</p>
+</blockquote>
+<p>我々は、畳み込みニューラルネットワーク（CNN）に焦点を当て、CNN表現の視覚化、事前に訓練されたCNNの表現を診断する方法、事前に訓練されたCNN表現の解き方、分解表現を持つCNNの学習、 モデルの解釈能力に基づいて学習を終了する。
+最後に、説明可能な人工知能の将来の動向について議論する。</p>
+<h2 id="introduction">Introduction</h2>
+<blockquote>
+<p>Convolutional neural networks (CNNs) [LeCun et al., 1998a; Krizhevsky et al., 2012; He et al., 2016; Huang et al., 2017] have achieved superior performance in many visual tasks, such as object classification and detection. However, the endto-end learning strategy makes CNN representations a black box.
+Except for the final network output, it is difficult for people to understand the logic of CNN predictions hidden inside the network.</p>
+</blockquote>
+<p>畳み込みニューラルネットワーク（CNN）[LeCunら、1998a; Krizhevskyら、2012; Heら、2016; Huangら、2017]は、オブジェクトの分類や検出など、多くのビジュアルタスクで優れたパフォーマンスを達成しています。
+しかしながら，end-to-endの学習戦略は、CNNの表現をブラックボックス化します．
+最終的なネットワーク出力を除いて、ネットワーク内に隠れているCNNの予測のロジックを人々が理解することは困難です。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>LeCun Y, Bottou L, Bengio Y, et al., 1998a.
+Gradient-based learning applied to document recognition.
+Proc IEEE, 86(11):2278-2324. https://doi.org/10.1109/5.726791</p>
+<p>Krizhevsky A, Sutskever I, Hinton GE, 2012.
+Imagenet classification with deep convolutional neural networks.
+NIPS, p.1097-1105.</p>
+<p>He K, Zhang X, Ren S, et al., 2016.
+Deep residual learning for image recognition.
+Proc IEEE Conf on Computer Vision and Pattern Recognition, p.770-778.</p>
+<p>Huang G, Liu Z, Weinberger KQ, et al., 2017.
+Densely connected convolutional networks.
+Proc IEEE Conf on Computer Vision and Pattern Recognition, p.4700-4708.</p>
+</blockquote>
+</blockquote>
+<p>In recent years, a growing number of researchers have realized that high model interpretability is of significant value in both theory and practice and have developed models with interpretable knowledge representations.</p>
+</blockquote>
+<p>近年、多くの研究者が高いモデルの解釈能力は理論と実践の両面で重要な価値を持つことを理解し，解釈可能な知識表現を持つモデルを開発しています．</p>
+<blockquote>
+<p>In this paper, we conduct a survey of current studies in understanding neural-network representations and learning neural networks with interpretable/disentangled representations.
+We can roughly define the scope of the review into the following six research directions.</p>
+</blockquote>
+<p>本稿では、ニューラルネットワークの表現を理解するための現状の研究と、解釈可能/解きほぐされた表現を用いたニューラルネットワークの学習について調査する。
+私たちはレビューの範囲を大まかに以下の6つの研究方向に定義しました。</p>
+<blockquote>
+<ol>
+<li>Visualization of CNN representations in intermediate network layers. These methods mainly synthesize the image that maximizes the score of a given unit in a pretrained CNN or invert feature maps of a conv-layer back to the input image.
+Please see Section 2 for detailed discussion.</li>
+</ol>
+</blockquote>
+<ol>
+<li>中間ネットワーク層におけるCNN表現の視覚化
+   これらの方法は、主に、予めトレーニングされたCNN内の所与のユニットのスコアを最大化する画像を合成するか、またはconv-layerの特徴マップを入力画像まで戻します。
+   詳細な説明はセクション2を参照してください。</li>
+</ol>
+<p>&gt; 2. Diagnosis of CNN representations.
+  Related studies may either diagnose a CNN’s feature space for different object categories or discover potential representation flaws in conv-layers. Please see Section 3 for details.</p>
+<ol>
+<li>CNN表現の診断．
+  関連する研究では、異なるオブジェクトカテゴリのCNNの特徴空間を診断するか、conv-layersの潜在的な表現欠陥を発見することができる。
+  詳細はセクション3を参照してください。</li>
+</ol>
+<blockquote>
+<ol>
+<li>Disentanglement of “the mixture of patterns” encoded in each filter of CNNs. These studies mainly disentangle complex representations in conv-layers and transform network representations into interpretable graphs.
+Please see Section 4 for details.</li>
+</ol>
+</blockquote>
+<ol>
+<li>CNNの各フィルタで符号化された "パターンの混合"を紐解く.
+ これらの研究は主にconv-layerの複雑な表現を解き、ネットワーク表現を解釈可能なグラフに変換する。
+ 詳細はセクション4を参照してください。</li>
+</ol>
+<blockquote>
+<ol>
+<li>Building explainable models. We discuss interpretable CNNs [Zhang et al., 2017c], capsule networks [Sabour et al., 2017], interpretable R-CNNs [Wu et al., 2017], and the InfoGAN [Chen et al., 2016] in Section 5.</li>
+</ol>
+</blockquote>
+<ol>
+<li>説明可能なモデルを構築する。 我々は、解釈可能なCNN [Zhangら、2017c]、カプセルネットワーク[Sabourら、2017]、解釈可能なR-CNN [Wuら、2017]、およびInfoGAN [Chen et al。、2016]</li>
+</ol>
+<blockquote>
+<ol>
+<li>Semantic-level middle-to-end learning via humancomputer interaction. A clear semantic disentanglement of CNN representations may further enable “middle-toend” learning of neural networks with weak supervision.
+Section 7 introduces methods to learn new models via human-computer interactions [Zhang et al., 2017b] and active question-answering with very limited human supervision [Zhang et al., 2017a].</li>
+</ol>
+</blockquote>
+<ol>
+<li>人間とコンピュータとのインタラクションによる意味レベルの中間的な学習。 CNN表現の明確な意味解析は、弱い監督下でのニューラルネットワークの「中間から先への」学習をさらに可能にすることができる。
+第7節では、人間とコンピュータの相互作用[Zhang et al。、2017b]を介して新しいモデルを学習する方法と、非常に限定された人間の監督[Zhang et al。、2017a]を用いた能動的質問応答方法を紹介する。</li>
+</ol>
+<blockquote>
+<p>Among all the above, the visualization of CNN representations is the most direct way to explore network representations.
+The network visualization also provides a technical foundation for many approaches to diagnosing CNN representations.</p>
+</blockquote>
+<p>上記のすべての中で、CNN表現の視覚化は、ネットワーク表現を探索する最も直接的な方法です。
+ネットワークの視覚化はまた、CNN表現を診断するための多くのアプローチのための技術的基礎を提供する。</p>
+<blockquote>
+<p>The disentanglement of feature representations of a pre-trained CNN and the learning of explainable network representations present bigger challenges to state-of-the-art algorithms.</p>
+</blockquote>
+<p>事前に訓練されたCNNの特徴表現の解析，および説明可能なネットワーク表現の学習は、最先端のアルゴリズムに対するより大きな課題を提示する。</p>
+<blockquote>
+<p>Finally, explainable or disentangled network representations are also the starting point for weakly-supervised middle-to-end learning.
+Values of model interpretability: The clear semantics in high conv-layers can help people trust a network’s prediction.</p>
+</blockquote>
+<p>最後に、説明可能なまたは解析されたネットワーク表現は、弱く監督される中間から終わりまでの学習の出発点でもあります。
+モデルの解釈能力のレベル：high conv-layersでの明確な意味は、人々がネットワークの予測を信頼するのに役立ちます。</p>
+<blockquote>
+<p>As discussed in [Zhang et al., 2018b], considering dataset and representation bias, a high accuracy on testing images still cannot ensure that a CNN will encode correct representations.
+For example, a CNN may use an unreliable context—eye features—to identify the “lipstick” attribute of a face image.</p>
+</blockquote>
+<p>[Zhang et al。、2018b]で論じられているように、データセットと表現バイアスを考慮すると、テスト画像の精度が高いことは、CNNが正しい表現を符号化することを保証できません。
+例えば、CNNは、顔画像の「口紅」属性を識別するために，信頼できない context-eye features-to を使用するだろう．</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Zhang Q, Cao R, Shi F, et al., 2018b.
+Interpreting CNN knowledge via an explanatory graph.
+Proc 32nd AAAI Conf on Artiﬁcial Intelligence, p.2124-2132.</p>
+</blockquote>
+</blockquote>
+<p>Therefore, people usually cannot fully trust a network unless a CNN can semantically or visually explain its logic, e.g. what patterns are used for prediction.</p>
+</blockquote>
+<p>したがって、CNNがその論理を意味的にまたは視覚的に説明することができない限り、人々は通常、ネットワークを完全に信頼することができない。例えばどのパターンが予測に使用されるかも．</p>
+<blockquote>
+<p>In addition, the middle-to-end learning or debugging of neural networks based on the explainable or disentangled network representations may also significantly reduce the requirement for human annotation.
+Furthermore, based on semantic representations of networks, it is possible to merge multiple CNNs into a universal network (i.e. a network encoding generic knowledge representations for different tasks) at the semantic level in the future.</p>
+</blockquote>
+<p>さらに、説明可能なまたは紐解かれたネットワーク表現に基づいたニューラルネットワークのmiddle-to-endの学習またはデバッグは、人間によるアノテーションの必要を大幅に削減する可能性があります。
+さらに、ネットワークの意味表現に基づいて、将来の意味レベルで複数のCNNをユニバーサルネットワーク（すなわち、異なるタスクのための汎用知識表現を符号化するネットワーク）にマージすることが可能である。</p>
+<blockquote>
+<p>In the following sections, we review the above research directions and discuss the potential future of technical developments.</p>
+</blockquote>
+<p>以下のセクションでは、上記の研究の方向性を見直し、将来の技術開発の将来について議論する。</p>
+<h2 id="2-visualization-of-cnn-representations">2 Visualization of CNN representations</h2>
+<blockquote>
+<p>Visualization of filters in a CNN is the most direct way of exploring visual patterns hidden inside a neural unit.
+Different types of visualization methods have been developed for network visualization.</p>
+</blockquote>
+<p>CNNにおけるフィルタの視覚化は、神経ユニット内に隠された視覚パターンを探索する最も直接的な方法である。
+ネットワーク視覚化のための異なるタイプの視覚化方法が開発されている。</p>
+<blockquote>
+<p>First, gradient-based methods [Zeiler and Fergus, 2014; Mahendran and Vedaldi, 2015; Simonyan et al., 2013; Springenberg et al., 2015] are the mainstream of network visualization.
+These methods mainly compute gradients of the score of a given CNN unit w.r.t. the input image.
+They use the gradients to estimate the image appearance that maximizes the unit score.
+[Olah et al., 2017] has provided a toolbox of existing techniques to visualize patterns encoded in different conv-layers of a pre-trained CNN.</p>
+</blockquote>
+<p>まず、gradient-basedの方法[Zeiler and Fergus、2014; Mahendran and Vedaldi、2015; Simonyan et al。、2013; Springenberg et al。、2015]はネットワーク可視化の主流である。
+これらの方法は、主に、与えられたCNNユニットのスコアの勾配を計算する。 入力画像に関して。
+彼らは、単位スコアを最大にする画像の状態を推定するために勾配を使用する。
+[Olah et al。、2017]は、事前に訓練されたCNNのさまざまなconv-layersでコード化されたパターンを視覚化するための既存のテクニックのツールボックスを提供しています。</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Zeiler MD, Fergus R, 2014.
+Visualizing and understanding convolutional networks.
+European Conf on Computer Vision, p.818-833. https://doi.org/10.1007/978-3-319-10590-1_53</p>
+<p>Mahendran A, Vedaldi A, 2015.
+Understanding deep image representations by inverting them.
+Proc IEEE Conf on Computer Visionand Pattern Recognition, p.5188-5196. https://doi.org/10.1109/CVPR.2015.7299155</p>
+<p>Simonyan K, Vedaldi A, Zisserman A, 2013.
+Deep inside convolutional networks:
+visualising image classiﬁcation models and saliency maps. http://arxiv.org/abs/1312.6034</p>
+<p>Springenberg JT, Dosovitskiy A, Brox T, et al., 2015.
+Striving for simplicity: the all convolutional net.
+Inte Conf on Learning Representations, p.1-14.</p>
+<p>Olah C, Mordvintsev A, Schubert L, 2017.
+Feature visualization.
+Distill. https://doi.org/10.23915/distill.00007</p>
+</blockquote>
+</blockquote>
+<p>Second, the up-convolutional net [Dosovitskiy and Brox, 2016] is another typical technique to visualize CNN representations.
+The up-convolutional net inverts CNN feature maps to images.
+We can regard up-convolutional nets as a tool that indirectly illustrates the image appearance corresponding to a feature map, although compared to gradient-based methods, up-convolutional nets cannot mathematically ensure that the visualization result exactly reflects actual representations in the CNN.</p>
+</blockquote>
+<p>次に、up-convolutional net[Dosovitskiy and Brox、2016]は、CNN表現を視覚化するもう1つの典型的な手法です。
+up-convolutional netは、CNNの特徴マップを画像に転化します。
+up-convolutional netsは勾配ベースの方法と比較したとき、feature mapに対応する画像の状態を間接的に示すためのツールとして考えることができます。
+畳み込みネットは、視覚化結果がCNNの実際の表現を正確に反映することを数学的に保証できません。</p>
+<blockquote>
+<p>Similarly, [Nguyen et al., 2017] has further introduced an additional prior, which controls the semantic meaning of the synthesized image, to the adversarial generative network.</p>
+</blockquote>
+<p>同様に、[Nguyen et al。、2017]はさらに、合成画像の意味的意味を敵対的な生成ネットワークに制御する追加の先行技術を導入した。</p>
+<blockquote>
+<p>We can use CNN feature maps as the prior for visualization.
+In addition, [Zhou et al., 2015] has proposed a method to accurately compute the image-resolution receptive field of neural activations in a feature map. The actual receptive field of neural activation is smaller than the theoretical receptive field computed using the filter size.</p>
+</blockquote>
+<p>我々は、視覚化のために事前にCNN特徴マップを使用することができる。
+さらに、[Zhou et al。、2015]は、特徴マップ内の神経活動の画像解像度受容野を正確に計算する方法を提案している。 神経活性化の実際の受容野は、フィルターサイズを用いて計算された理論受容野よりも小さい。</p>
+<blockquote>
+<p>The accurate estimation of the receptive field helps people to understand the representation of a filter.</p>
+</blockquote>
+<p>受容野の正確な推定は、人々がフィルタの表現を理解するのに役立ちます。</p>
+<h2 id="3-diagnosis-of-cnn-representations">3 Diagnosis of CNN representations</h2>
+<blockquote>
+<p>Some methods go beyond the visualization of CNNs and diagnose CNN representations to obtain insight understanding of features encoded in a CNN. We roughly divide all relevant research into the following five directions.</p>
+</blockquote>
+<p>いくつかの方法は、CNNの視覚化を超え、CNN表現を診断して、CNNでコード化された特徴の理解を得る。 関連するすべての研究を以下の5つの方向に大まかに分けます。</p>
+<blockquote>
+<p>Studies in the first direction analyze CNN features from a global view.
+ [Szegedy et al., 2014] has explored semantic meanings of each filter. [Yosinski et al., 2014] has analyzed the transferability of filter representations in intermediate conv-layers.
+ [Lu, 2015; Aubry and Russell, 2015] have computed feature distributions of different categories/attributes in the feature space of a pre-trained CNN.</p>
+</blockquote>
+<p>第1の方向の研究は、グローバルな視点からCNNの特徴を分析する。
+   [Szegedy et al。、2014]は、各フィルタの意味論的意味を探求している。 [Yosinski et al。、2014]は、中間コンバージョン層におけるフィルタ表現の伝達可能性を分析した。
+   [Lu、2015; Aubry and Russell、2015]は、事前に訓練されたCNNの特徴空間における異なるカテゴリ/属性の特徴分布を計算した。</p>
+<blockquote>
+<p>The second research direction extracts image regions that directly contribute the network output for a label/attribute to explain CNN representations of the label/attribute.
+This is similar to the visualization of CNNs. Methods of [Fong and Vedaldi, 2017; Selvaraju et al., 2017]
+have been proposed to propagate gradients of feature maps w.r.t. the final loss back to the image plane to estimate the image regions.
+The LIME model proposed in [Ribeiro et al., 2016] extracts image regions that are highly sensitive to the network output.</p>
+</blockquote>
+<p>第2の研究方向は、ラベル/属性のCNN表現を説明するためにラベル/属性のネットワーク出力に直接寄与する画像領域を抽出する。
+これは、CNNの視覚化に似ています。 [Fong and Vedaldi、2017; Selvarajuら、2017]
+特徴マップの勾配を伝播することが提案されている。 画像領域を推定するために最終的な損失を画像平面に戻す。
+[Ribeiro et al。、2016]で提案されたLIMEモデルは、ネットワーク出力に対して非常に敏感な画像領域を抽出する。</p>
+<blockquote>
+<p>Studies of [Zintgraf et al., 2017; Kindermans et al., 2017; Kumar et al., 2017] have invented methods to visualize areas in the input image that contribute the most to the decision-making process of the CNN. [Wang et al., 2017; Goyal et al., 2016] have tried to interpret the logic for visual question-answering encoded in neural networks.</p>
+</blockquote>
+<p>[Zintgraf et al。、2017; Kindermansら、2017; Kumar et al。、2017]は、CNNの意思決定プロセスに最も寄与する入力画像内の領域を視覚化する方法を発明した。 [Wangら、2017; Goyal et al。、2016]は、ニューラルネットワークに符号化された視覚的質問応答の論理を解釈しようと試みた。</p>
+<blockquote>
+<p>These studies list important objects (or regions of interests) detected from the images and crucial words in questions as the explanation of output answers.</p>
+</blockquote>
+<p>これらの研究は、画像から検出された重要な対象（または関心領域）と、出力回答の説明としての質問の重要な単語をリストします。</p>
+<blockquote>
+<p>The estimation of vulnerable points in the feature space of a CNN is also a popular direction for diagnosing network representations.</p>
+</blockquote>
+<p>CNNの特徴空間における脆弱な点の推定は、ネットワーク表現を診断するための一般的な方向でもある。</p>
+<blockquote>
+<p>Approaches of [Su et al., 2017; Koh and Liang, 2017; Szegedy et al., 2014] have been developed to compute adversarial samples for a CNN.
+I.e. these studies aim to estimate the minimum noisy perturbation of the input image that can change the final prediction.</p>
+</blockquote>
+<p>[Suら、2017; Koh and Liang、2017; Szegedy et al。、2014] は、CNNの敵対的サンプルを計算するために開発されました。
+すなわち。 これらの研究は、入力画像中にどのようなminumum noisy perturbationを与えると最終的な予測を変えることができるか推定することを目的としている。</p>
+<blockquote>
+<p>In particular, influence functions proposed in [Koh and Liang, 2017] can be used to compute adversarial samples.
+The influence function can also provide plausible ways to create training samples to attack the learning of CNNs, fix the training set, and further debug representations of a CNN.</p>
+</blockquote>
+<p>特に、[Koh and Liang、2017]で提案された影響関数を使用して、敵対的サンプルを計算することができる。
+ 影響関数は、CNNの学習を攻撃し、トレーニングセットを修正し、さらにCNNの表現をデバッグするための訓練サンプルを作成するためのもっともらしい方法を提供することもできる。</p>
+<blockquote>
+<p>The fourth research direction is to refine network representations based on the analysis of network feature spaces.</p>
+</blockquote>
+<p>第4の研究方向は、ネットワーク特徴空間の分析に基づいてネットワーク表現を改良することである。</p>
+<blockquote>
+<p>Given a CNN pre-trained for object classification, [Lakkaraju et al., 2017] has proposed a method to discover knowledge blind spots (unknown patterns) of the CNN in a weakly-supervised manner.</p>
+</blockquote>
+<p>オブジェクト分類のために事前にトレーニングされたCNNが与えられた場合、[Lakkaraju et al。、2017]はCNNの知識の盲点（未知のパターン）を弱く監視した方法で発見する方法を提案している。</p>
+<blockquote>
+<p>This method grouped all sample points in the entire feature space of a CNN into thousands of pseudo-categories.
+It assumed that a well learned CNN would use the sub-space of each pseudo-category to exclusively represent a subset of a specific object class.</p>
+</blockquote>
+<p>この方法は、CNNの特徴空間全体のすべてのサンプル点を数千の擬似カテゴリに分類する。
+よく学習されたCNNは、特定のオブジェクトクラスのサブセットを排他的に表すために各疑似カテゴリの部分空間を使用するということが考えられる。</p>
+<blockquote>
+<p>In this way, this study randomly showed object samples within each sub-space, and used the sample purity in the sub-space to discover potential representation flaws hidden in a pre-trained CNN.</p>
+</blockquote>
+<p>このように、この研究では各部分空間内に対象サンプルをランダムに表示し、部分空間内のsample purityを使用して、事前にトレーニングされたCNNに隠れた表現上の欠陥を発見する。</p>
+<blockquote>
+<p>To distill representations of a teacher network to a student network for sentiment analysis, [Hu et al., 2016] has proposed using logic rules of natural languages (e.g. I-ORG cannot follow B-PER) to construct a distillation loss to supervise the knowledge distillation of neural networks, in order to obtain more meaningful network
+representations.</p>
+</blockquote>
+<p>感情分析のために教師ネットワークの表現を生徒ネットワークに引き出すために、[Hu et al。、2016]は自然言語の論理規則を使用することを提案している（例えばI-ORGはB-PERに従うことができない） より意味のあるネットワークを得るために、ニューラルネットワークの知識蒸留
+表現。</p>
+<blockquote>
+<p>Finally, [Zhang et al., 2018b] has presented a method to discover potential, biased representations of a CNN. Fig. 1 shows biased representations of a CNN trained for the estimation of face attributes. When an attribute usually co-appears with specific visual features in training images, then the CNN may use such co-appearing features to represent the attribute.</p>
+</blockquote>
+<p>最後に、[Zhang et al 2018b]は、CNNの潜在的で偏見のある表現を発見する方法を提示した。 図1は、顔属性の推定のために訓練されたCNNのバイアスされた表現を示す。 属性が、通常、トレーニング画像内の特定の視覚的特徴と同時に現れる場合、CNNは、そのような共演する特徴を使用して、その属性を表すことができる。</p>
+<blockquote>
+<blockquote>
+<p><em>Zhang Q, Cao R, Shi F, et al., 2018b.
+Interpreting CNN knowledge via an explanatory graph.
+Proc 32nd AAAI Conf on Artificial Intelligence, p.2124-2132.</em></p>
+</blockquote>
+<p>When the used co-appearing features are not semantically related to the target attribute, these features can be considered as biased representations.
+Given a pre-trained CNN (e.g. a CNN that was trained to estimate face attributes), [Zhang et al., 2018b] required people to annotate some ground-truth relationships between attributes, e.g. the lipstick attribute is positively related to the heavy-makeup attribute, and is not related to the black hair attribute.</p>
+</blockquote>
+<p>使用された共出現特徴がターゲット属性に意味的に関連していない場合、これらの特徴はバイアスされた表現と見なすことができる。
+事前に訓練されたCNN（例えば、顔属性を推定するように訓練されたCNN）が与えられた場合、[Zhang et al 2018b]は、人々に属性間のいくつかの真実の関係を注釈する必要があった。 口紅の属性は重い化粧の属性に積極的に関連し、黒髪の属性には関係しません。</p>
+<blockquote>
+<p>Then, the method mined inference patterns of each attribute output from conv-layers, and used inference patterns to compute actual attribute relationships encoded in the CNN.</p>
+</blockquote>
+<p>次に、conv-layersから出力された各属性の推論パターンをマイニングし、推論パターンを使用してCNNでエンコードされた実際の属性関係を計算します。</p>
+<blockquote>
+<p>Conflicts between the ground-truth and the mined attribute relationships indicated biased representations.</p>
+</blockquote>
+<p>地上真理と採掘された属性関係との間の衝突は、偏った表現を示した。</p>
+<h2 id="4-disentangling-cnn-representations-into-explanatory-graphs-decision-trees">4 Disentangling CNN representations into explanatory graphs &amp; decision trees</h2>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>判断根拠となりうる複数のパターンの共起関係を明らかにする手法</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="41-disentangling-cnn-representations-into-explanatory-graphs">4.1 Disentangling CNN representations into explanatory graphs</h3>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>識別理由ではなくCNNの内部表現を理解する方法(もちろん、間接的に識別理由の理解にもつながります)</p>
+</blockquote>
+</blockquote>
+<p>Compared with the visualization and diagnosis of network representations in previous sections, disentangling CNN features into human-interpretable graphical representations (namely explanatory graphs) provides a more thorough explanation of network representations.</p>
+</blockquote>
+<p>前節のネットワーク表現の視覚化と診断と比較して、CNN機能を人間が解釈可能なグラフィカルな表現（すなわち、説明的なグラフ）に解きほぐすことにより、ネットワーク表現のより完全な説明が提供される。</p>
+<blockquote>
+<p>[Zhang et al., 2018a; Zhang et al.,2016] have proposed disentangling features in conv-layers of a pre-trained CNN and have used a graphical model to represent the semantic hierarchy hidden inside a CNN.</p>
+</blockquote>
+<p>[Zhangら、2018a; Zhang et al。、2016]は、事前に訓練されたCNNのconv-layersの明快な特徴を提案し、グラフィカルモデルを使用してCNN内に隠された意味階層を表現している。</p>
+<blockquote>
+<p>As shown in Fig. 2, each filter in a high conv-layer of a CNN usually represents a mixture of patterns.
+For example, the filter may be activated by both the head and the tail parts of an object.
+Thus, to provide a global view of how visual knowledge is organized in a pre-trained CNN, studies of [Zhang et al., 2018a; Zhang et al., 2016] aim to answer the following three questions.</p>
+</blockquote>
+<p>図2に示すように、CNNのhigh conv-layerの各フィルタは、通常、パターンの混合を表す。
+例えば、フィルタは、物体の頭部及び尾部の両方によって作動させられる。
+したがって、事前に訓練されたCNNでどのように視覚知識が組織化されているかを全体的に見るために、[Zhang et al。、2018a; Zhang et al。、2016]は、以下の3つの質問に答えることを目指している</p>
+<blockquote>
+<blockquote>
+<p><em>Zhang Q, Cao R, Wu YN, et al., 2016.
+   Growing interpretable part graphs on convnets via multi-shot learning.
+   Proc 30th AAAI Conf on Artificial Intelligence, p.2898-2906.</em></p>
+<p><em>Zhang Q, Wang W, Zhu SC, 2018a.
+   Examining CNN representations with respect to dataset bias.
+   Proc 32nd AAAI Conf on Artificial Intelligence, in press</em></p>
+</blockquote>
+<ul>
+<li>How many types of visual patterns are memorized by each convolutional filter of the CNN (here, a visual pat tern may describe a specific object part or a certain texture)?</li>
+<li>Which patterns are co-activated to describe an object part?</li>
+<li>What is the spatial relationship between two co-activated patterns?</li>
+</ul>
+</blockquote>
+<ul>
+<li>CNNの各畳み込みフィルタによって何種類のビジュアルパターンが記憶されているか（ここで、ビジュアルパターンは特定のオブジェクト部分または特定のテクスチャを記述することができる）</li>
+<li>オブジェクト部分を記述するためにどのパターンが共に起動されていますか？</li>
+<li>2つの共活性化パターン間の空間的関係は何ですか？</li>
+</ul>
+<blockquote>
+<p>As shown in Fig. 3, the explanatory graph explains the knowledge semantic hidden inside the CNN. The explanatory graph disentangles the mixture of part patterns in each filter’s feature map of a conv-layer, and uses each graph node to represent a part.</p>
+</blockquote>
+<p>図3に示すように、説明グラフは、CNN内に隠された知識意味を説明している。 説明グラフは、各フィルタのconv-layerのフィーチャマップ内のパーツパターンの混合を解き、各グラフノードを使用してパーツを表します。</p>
+<blockquote>
+<p>• The explanatory graph has multiple layers. Each graph layer corresponds to a specific conv-layer of a CNN.
+• Each filter in a conv-layer may represent the appearance of different object parts. The algorithm automatically disentangles the mixture of part patterns encoded in a single filter, and uses a node in the explanatory graph to represent each part pattern.</p>
+</blockquote>
+<ul>
+<li>説明グラフには複数のレイヤーがあります。 各グラフ層は、CNNの特定のコンバレイ層に対応する。</li>
+<li>conv-layerの各フィルタは、異なるオブジェクト部分の外観を表すことがあります。 アルゴリズムは、単一のフィルタに符号化された部分パターンの混合を自動的に解き、説明グラフのノードを使用して各部分パターンを表す。</li>
+</ul>
+<blockquote>
+<p>• Each node in the explanatory graph consistently represents the same object part through different images.
+We can use the node to localize the corresponding part on the input image. To some extent, the node is robust to shape deformation and pose variations.</p>
+</blockquote>
+<ul>
+<li>
+<p>説明グラフの各ノードは、一貫して、異なる画像を介して同じオブジェクト部分を表す。
+  このノードを使用して、入力画像上の対応する部分をローカライズすることができます。
+  ある程度まで、ノードは、形状変形および姿勢変動に対してロバストである。</p>
+<blockquote>
+<p>• Each edge encodes the co-activation relationship and the spatial relationship between two nodes in adjacent layers.</p>
+</blockquote>
+</li>
+<li>
+<p>各エッジは、共活性化関係および隣接する層内の2つのノード間の空間的関係を符号化する。</p>
+<blockquote>
+<p>• We can regard an explanatory graph as a compression of feature maps of conv-layers. A CNN has multiple convlayers.</p>
+</blockquote>
+</li>
+</ul>
+<p>我々は、説明グラフをconv-layersの特徴マップの圧縮と見なすことができる。 CNNには複数のconvlayersがある。</p>
+<blockquote>
+<p>Each conv-layer may have hundreds of filters, and each filter may produce a feature map with hundreds of neural units. We can use tens of thousands of nodes in the explanatory graph to represent information contained in all tens of millions of neural units in these feature maps, i.e. by which part patterns the feature maps are activated, and where the part patterns are localized in input images.</p>
+</blockquote>
+<p>各conv-layerは何百ものフィルタを持ち、各フィルタは何百もの神経単位を持つフィーチャマップを生成します。 説明グラフの何万ものノードを使用して、これらの特徴マップ内のすべての数千万の神経単位に含まれる情報、すなわち、特徴マップがどの部分パターンを活性化し、部分パターンが入力画像に局在するか 。</p>
+<blockquote>
+<p>• Just like a dictionary, each input image can only trigger a small subset of part patterns (nodes) in the explanatory graph.</p>
+</blockquote>
+<p>辞書と同様に、各入力画像は説明グラフの部分パターン（ノード）の小さなサブセットをトリガするだけです。</p>
+<blockquote>
+<p>Each node describes a common part pattern with high transferability, which is shared by hundreds or thousands of training images.</p>
+</blockquote>
+<p>各ノードは、数百または数千のトレーニング画像によって共有される高い可搬性を備えた共通部品パターンを記述します。</p>
+<blockquote>
+<p>Fig. 4 lists top-ranked image patches corresponding to different nodes in the explanatory graph. Fig. 5 visualizes the spatial distribution of object parts inferred by the top 50% nodes in the L-th layer of the explanatory graph with the highest inference scores. Fig. 6 shows object parts inferred by a single node.</p>
+</blockquote>
+<p>図4は、説明グラフ中の異なるノードに対応する最上位画像パッチをリストアップしたものである。 図5は、推論スコアが最も高い説明グラフのL番目の層の上位50％ノードによって推論された対象部品の空間分布を視覚化したものである。 図6は、単一のノードによって推論されるオブジェクト部分を示す。</p>
+<blockquote>
+<p>Application: multi-shot part localization There are many potential applications based on the explanatory graph.</p>
+</blockquote>
+<p>アプリケーション：マルチショット部分のローカリゼーション説明グラフに基づいて多くの潜在的なアプリケーションがあります。</p>
+<blockquote>
+<p>For example, we can regard the explanatory graph as a visual dictionary of a category and transfer graph nodes to other applications, such as multi-shot part localization.</p>
+</blockquote>
+<p>例えば、説明グラフをカテゴリの視覚的辞書と見なして、グラフノードをmulti-shot part localizationなどの他のアプリケーションに転送することができます。</p>
+<blockquote>
+<p>Given very few bounding boxes of an object part, [Zhang et al., 2018a] has proposed retrieving hundreds of nodes that are related to the part annotations from the explanatory graph, and then use the retrieved nodes to localize object parts in previously unseen images.</p>
+</blockquote>
+<p>オブジェクト部分の境界ボックスの数が非常に少ないため、[Zhang et al。、2018a]は数百の説明グラフからの部品注釈に関連しているノードを検索することを提案している</p>
+<p>次に、検索されたノードを使用して、以前に見えなかった画像内のオブジェクト部品を位置特定する。</p>
+<blockquote>
+<p>Because each node in the explanatory graph encodes a part pattern shared by numerous training images, the retrieved nodes describe a general appearance of the target part without being over-fitted to the limited annotations of part bounding boxes.</p>
+</blockquote>
+<p>説明グラフの各ノードは、多数のトレーニング画像によって共有されるパーツパターンを符号化するので、検索されたノードは、部品バウンディングボックスの限定された注釈にあまり適合することなく、ターゲット部品の一般的な外観を記述する。</p>
+<blockquote>
+<p>Given three annotations for each object part, the explanatory-graph-based method has exhibited superior performance of part localization and has decreased by about 1/3 localization errors w.r.t. the second-best baseline.</p>
+</blockquote>
+<p>各オブジェクト部分について3つの注釈が与えられた場合、説明グラフに基づく方法は、パーツローカリゼーションの優れた性能を示し、約1/3のローカライゼーションエラーで減少した。 2番目に良いベースライン。</p>
+<h2 id="42-disentangling-cnn-representations-into-decision-trees">4.2 Disentangling CNN representations into decision trees</h2>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>特殊な構造の識別器を使用する方法(この記事でのその他)</p>
+</blockquote>
+</blockquote>
+<p>[Zhang et al., 2018c] has further proposed a decision tree to encode decision modes in fully-connected layers. The decision tree is not designed for classification.</p>
+<p>Instead, the decision tree is used to quantitatively explain the logic for each CNN prediction. I.e. given an input image, we use the CNN to make a prediction. The decision tree tells people which filters in a conv-layer are used for the prediction and how much they contribute to the prediction.</p>
+<p>As shown in Fig. 7, the method mines potential decision modes memorized in fully-connected layers. The decision tree organizes these potential decision modes in a coarseto-fine manner. Furthermore, this study uses the method of [Zhang et al., 2017c] to disentangle representations of filters in the top conv-layers, i.e. making each filter represent a specific object part. In this way, people can use the decision tree to explain rationales for each CNN prediction at the semantic level, i.e. which object parts are used by the CNN to make the prediction.</p>
+</blockquote>
+<h2 id="5-learning-neural-networks-with-interpretabledisentangled-representations">5 Learning neural networks with interpretable/disentangled representations</h2>
+<blockquote>
+<p>Almost all methods mentioned in previous sections focus on
+the understanding of a pre-trained network. In this section,
+we review studies of learning disentangled representations
+of neural networks, where representations in middle layers
+are no longer a black box but have clear semantic meanings.
+Compared to the understanding of pre-trained networks,
+learning networks with disentangled representations present
+more challenges. Up to now, only a few studies have been
+published in this direction.
+5.1 Interpretable convolutional neural networks
+As shown in Fig. 8, [Zhang et al., 2017c] has developed a
+method to modify an ordinary CNN to obtain disentangled
+representations in high conv-layers by adding a loss to each
+filter in the conv-layers. The loss is used to regularize the
+feature map towards the representation of a specific object
+part.
+Note that people do not need to annotate any object parts
+or textures to supervise the learning of interpretable CNNs.
+Instead, the loss automatically assigns an object part to each
+filter during the end-to-end learning process. As shown in
+Fig. 9, this method designs some templates. Each template
+Tµi
+is a matrix with the same size of feature map. Tµi
+describes
+the ideal distribution of activations for the feature map
+when the target part mainly triggers the i-th unit in the feature
+map.
+Given the joint probability of fitting a feature map to a template,
+the loss of a filter is formulated as the mutual information
+between the feature map and the templates. This loss
+encourages a low entropy of inter-category activations. I.e.
+each filter in the conv-layer is assigned to a certain category.
+If the input image belongs to the target category, then the loss
+expects the filter’s feature map to match a template well; otherwise,
+the filter needs to remain inactivated. In addition, the
+loss also encourages a low entropy of spatial distributions of
+neural activations. I.e. when the input image belongs the target
+category, the feature map is supposed to exclusively fit a
+single template. In other words, the filter needs to activate a
+single location on the feature map.
+This study assumes that if a filter repetitively activates various
+feature-map regions, then this filter is more likely to describe
+low-level textures (e.g. colors and edges), instead of
+high-level parts. For example, the left eye and the right eye
+may be represented by different filters, because contexts of
+the two eyes are symmetric, but not the same.
+Fig.10 shows feature maps produced by different filters of
+an interpretable CNN. Each filter consistently represents the
+same object part through various images.
+5.2 Interpretable R-CNN
+[Wu et al., 2017] has proposed the learning of qualitatively
+interpretable models for object detection based on the RCNN.
+The objective is to unfold latent configurations of
+object parts automatically during the object-detection process.
+This method is learned without using any part annotations
+for supervision. [Wu et al., 2017] uses a topdown
+hierarchical and compositional grammar, namely an
+And-Or graph (AOG), to model latent configurations of object
+parts. This method uses an AOG-based parsing operator
+to substitute for the RoI-Pooling operator used in the RCNN.
+The AOG-based parsing harnesses explainable compositional
+structures of objects and maintains the discrimination
+power of a R-CNN. This idea is related to the disentanglement
+of the local, bottom-up, and top-down information components
+for prediction [Wu et al., 2007; Yang et al., 2009;
+Wu and Zhu, 2011].
+During the detection process, a bounding box is interpreted
+as the best parse tree derived from the AOG on-the-fly. During
+the learning process, a folding-unfolding method is used
+to train the AOG and R-CNN in an end-to-end manner.
+Fig. 11 illustrates an example of object detection. The proposed
+method detects object bounding boxes. The method
+also determines the latent parse tree and part configurations
+of objects as the qualitatively extractive rationale in detection.
+5.3 Capsule networks
+[Sabour et al., 2017] has designed novel neural units, namely
+capsules, in order to substitute for traditional neural units to
+construct a capsule network. Each capsule outputs an activity
+vector instead of a scalar. The length of the activity vector
+represents the activation strength of the capsule, and the
+orientation of the activity vector encodes instantiation parameters.
+Active capsules in the lower layer send messages to
+capsules in the adjacent higher layer. This method uses an
+iterative routing-by-agreement mechanism to assign higher
+weights with the low-layer capsules whose outputs better fit
+the instantiation parameters of the high-layer capsule.
+Experiments showed that when people trained capsule networks
+using the MNIST dataset [LeCun et al., 1998b], a capsule
+encoded a specific semantic concept. Different dimensions
+of the activity vector of a capsule controlled different
+features, including 1) scale and thickness, 2) localized part,
+3) stroke thickness, 3) localized skew, and 4) width and translation.
+5.4 Information maximizing generative
+adversarial nets
+The information maximizing generative adversarial net [Chen
+et al., 2016], namely InfoGAN, is an extension of the generative
+adversarial network. The InfoGAN maximizes the
+mutual information between certain dimensions of the latent
+representation and the image observation. The InfoGAN separates
+input variables of the generator into two types, i.e. the
+incompressible noise z and the latent code c. This study aims
+to learn the latent code c to encode certain semantic concepts
+in an unsupervised manner.
+The InfoGAN has been trained using the MNIST
+dataset [LeCun et al., 1998b], the CelebA dataset [Liu et al.,
+2015], the SVHN dataset [Netzer et al., 2011], the 3D face
+dataset [Paysan et al., 2009], and the 3D chair dataset [Aubry
+et al., 2014]. Experiments have shown that the latent code
+has successfully encoded the digit type, the rotation, and the
+width of digits in the MNIST dataset, the lighting condition
+and the plate context in the SVHN dataset, the azimuth, the
+existence of glasses, the hairstyle, and the emotion in the
+CelebA dataset, and the width and 3D rotation in the 3D face
+and chair datasets.</p>
+</blockquote>
+<h2 id="6-evaluation-metrics-for-network-interpretability">6 Evaluation metrics for network interpretability</h2>
+<blockquote>
+<p>Evaluation metrics for model interpretability are crucial for the development of explainable models.
+モデル解釈能力の評価基準は、説明可能なモデルの開発にとって重要です。</p>
+<p>This is because unlike traditional well-defined visual applications (e.g. object detection and segmentation), network interpretability is more difficult to define and evaluate. The evaluation metric of network interpretability can help people define the concept of network interpretability and guide the development of learning interpretable network representations.</p>
+</blockquote>
+<p>これは、従来の明確に定義されたビジュアルアプリケーション（例えば、オブジェクト検出およびセグメント化）とは異なり、ネットワークの解釈可能性を定義および評価することがより困難であるためである。 ネットワーク解釈能力の評価基準は、人々がネットワーク解釈能力の概念を定義し、解釈可能なネットワーク表現を学習することを導くのに役立つ。</p>
+<blockquote>
+<p>Up to now, only very few studies have discussed the evaluation of network interpretability.
+Proposing a promising evaluation metric is still a big challenge to state-of-the-art algorithms.
+In this section, we simply introduce two latest evaluation metrics for the interpretability of CNN filters, i.e. the filter interpretability proposed by [Bau et al., 2017] and the location instability proposed by [Zhang et al., 2018a].</p>
+</blockquote>
+<p>今までは、ネットワークの解釈可能性の評価について議論された研究はごくわずかでした。
+有望な評価基準を提案することは、最先端のアルゴリズムにとって依然として大きな課題です。
+このセクションでは、CNNフィルタの解釈可能性のための2つの最新評価メトリック、すなわち[Bauら、2017]によって提案されたフィルタの解釈可能性と[Zhang et al。、2018a]によって提案された位置不安定性を簡単に紹介する。</p>
+<h3 id="61-filter-interpretability">6.1 Filter interpretability</h3>
+<blockquote>
+<p>[Bau et al., 2017] has defined six types of semantics for CNN filters, i.e. objects, parts, scenes, textures, materials, and colors. The evaluation of filter interpretability requires people to annotate these six types of semantics on testing images at the pixel level.</p>
+</blockquote>
+<p>[Bauら、2017]は、CNNフィルタ、すなわちオブジェクト、パーツ、シーン、テクスチャ、マテリアル、およびカラーの6種類のセマンティクスを定義しています。 フィルタの解釈能力の評価では、ピクセルレベルで画像をテストする際に、これらの6種類のセマンティクスに注釈を付ける必要があります。</p>
+<blockquote>
+<p>The evaluation metric measures the fitness between the image-resolution receptive field of a filter’s neural activations1 and the pixel-level semantic annotations on the image.</p>
+</blockquote>
+<p>評価メトリックは、フィルタの神経活性化の画像解像度受容野と、画像上のピクセルレベルの意味注釈との適合度を測定する。</p>
+<blockquote>
+<p>For example, if the receptive field of a filter’s neural activations usually highly overlaps with ground-truth image regions of a specific semantic concept through different images, then we can consider that the filter represents this semantic concept.</p>
+</blockquote>
+<p>例えば、フィルタの神経活動の受容場が、通常、異なる画像を通して特定の意味概念のground-truth画像領域と高度に重なる場合、フィルタがこの意味概念を表すと考えることができる。</p>
+<blockquote>
+<p>For each filter f, this method computes its feature maps X = {x = f(I)|I ∈ I} on different testing images. Then, the distribution of activation scores in all positions of all feature maps is computed. [Bau et al., 2017] set an activation threshold Tf such that p(xij &gt; Tf ) = 0.005, to select top activations from all spatial locations [i, j] of all feature maps x ∈ X as valid map regions corresponding to f’s semantics. Then, the method scales up low-resolution valid map regions to the image resolution, thereby obtaining the receptive field of valid activations on each image.</p>
+</blockquote>
+<p>各フィルタfについて、この方法は異なるテスト画像上でその特徴マップX = {x = f（I）| I∈I}を計算する。 次に、すべての特徴マップのすべての位置における活性化スコアの分布が計算される。 [Bauら、2017]は、すべての特徴マップx∈Xのすべての空間位置[i、j]からのトップアクティベーションを、対応する有効なマップ領域として選択するために、p（xij&gt; Tf）= 0.005となるように、 fのセマンティクス。 次に、この方法は、低解像度の有効なマップ領域を画像解像度にスケールアップし、それにより各画像上の有効なアクチベーションの受容野を得る。</p>
+<blockquote>
+<p>We use S
+I
+f
+to denote the receptive
+field of f’s valid activations w.r.t. the image I.
+The compatibility between a filter f and a specific semantic
+concept is reported as an intersection-over-union score
+IoUI
+f,k =
+kS
+I
+f ∩S
+I
+k
+k
+kSI
+f
+∪SI
+k
+k
+, where S
+I
+k denotes the ground-truth mask
+of the k-th semantic concept on the image I. Given an image
+I, filter f is associated with the k-th concept if IoUI
+f,k &gt; 0.04.
+The probability of the k-th concept being associated with the
+filter f is given as Pf,k = meanI:with k-th concept1(IoUI
+f,k &gt; 0.04).
+Thus, we can use Pf,k to evaluate the filter interpretability of
+f.</p>
+</blockquote>
+<h3 id="62-location-instability">6.2 Location instability</h3>
+<blockquote>
+<p>Another evaluation metric is location instability. This metric is proposed by [Zhang et al., 2018a] to evaluate the fitness between a CNN filter and the representation of an object part.</p>
+</blockquote>
+<p>別の評価基準は、位置不安定性である。 このメトリックは、[Zhang et al。、2018a]によって、CNNフィルタとオブジェクト部分の表現との間の適合度を評価するために提案されている。</p>
+<blockquote>
+<p>Given an input image I, the CNN computes a feature map x ∈ R N×N of filter f. We can regard the unit xi,j (1 ≤ i, j ≤ N) with the highest activation as the location inference of f, where N × N is referred to as the size of the feature map. We use pˆ to denote the image position that corresponds to the inferred feature map location (i, j), i.e. the center of the unit xi,j ’s receptive field when we backward propagated the receptive field to the image plane.</p>
+</blockquote>
+<p>入力画像Iが与えられると、CNNはフィルタfの特徴マップx∈RN×Nを計算する。 最も高い活性化を有するユニットxi、j（1≦i、j≦N）をfの位置推論として考えることができ、N×Nは特徴マップのサイズと呼ばれる。 推定された特徴マップ位置（i、j）に対応する画像位置、すなわち、受容野を画像平面に逆方向に伝播させたときの単位x i、jの受容野の中心を表すためにpを使用する。</p>
+<blockquote>
+<p>The evaluation assumes that if f consistently represented the same object part (the object part may not have an explicit name according to people’s cognition) through different objects, then distances between the image position pˆ and some object landmarks should not change much among different objects.</p>
+</blockquote>
+<p>この評価では、fが異なるオブジェクトを通して同じオブジェクト部分（人の認知に応じて明示的な名前を持たないことがある）を一貫して表現すると、画像位置pといくつかのオブジェクトランドマーク間の距離は、異なるオブジェクト間であまり変化してはならないものと仮定する。</p>
+<blockquote>
+<p>For example, if filter f represents the shoulder, then the distance between the shoulder and the head should remain stable through different objects.</p>
+</blockquote>
+<p>例えば、フィルタfが肩部を表す場合、肩部と頭部との間の距離は、異なる物体によって安定したままであるべきである。</p>
+<blockquote>
+<p>Therefore, people can compute the deviation of the distance between the inferred position pˆ and a specific groundtruth landmark among different images. The average deviation w.r.t. various landmarks can be used to evaluate the location</p>
+</blockquote>
+<p>したがって、人々は、推測された位置pと異なる画像間の特定の地上のランドマークとの間の距離の偏差を計算することができる。 平均偏差w.r.t. さまざまなランドマークを使用して場所を評価することができます</p>
+<blockquote>
+<p>instability of f. As shown in Fig. 12, let dI (pk, pˆ) =
+√
+kpk−pˆk
+w2+h2
+denote the normalized distance between the inferred
+part and the k-th landmark pk on image I.
+√
+w2 + h2 dep</p>
+<p>notes the diagonal length of the input image. Thus, Df,k = varI [dI (pk, pˆ)] is reported as the relative location deviation of filter f w.r.t. the k-th landmark, where varI [dI (pk, pˆ)] is referred to as the variation of the distance dI (pk, pˆ). Because each landmark cannot appear in all testing images, for each filter f, the metric only uses inference results with the topM highest activation scores on images containing the k-th landmark to compute Df,k. In this way, the average of relative location deviations of all the filters in a conv-layer w.r.t. all landmarks, i.e. meanfmeanK k=1Df,k, measures the location instability of a CNN, where K denotes the number of landmarks.</p>
+</blockquote>
+<p>入力画像の対角長さを記録する。 したがって、Df、k = varI [dI（pk、p）]は、フィルタf w.r.tの相対位置偏差として報告される。 ここで、varI [dI（pk、p）]は、距離dI（pk、p）の変化と呼ばれるk番目のランドマークである。 各ランドマークはすべてのテスト画像に表示されないため、各フィルタfについて、Df、kを計算するためのk番目のランドマークを含む画像上でtopMの最も高い活性化スコアで推論結果のみが使用されます。 このようにして、conv-layer w.r.t.におけるすべてのフィルタの相対的位置偏差の平均が計算される。 すべてのランドマーク、すなわちmeanfmeanK k = 1Df、kは、CNNの位置不安定性を測定する。ここで、Kはランドマークの数を示す。</p>
+<h2 id="7-network-interpretability-for-middle-to-end">7 Network interpretability for middle-to-end</h2>
+<blockquote>
+<p>learning
+Based on studies discussed in Sections 4 and 5, people may
+either disentangle representations of a pre-trained CNN or
+learn a new network with interpretable, disentangled representations.
+Such interpretable/disentangled network representations
+can further enable middle-to-end model learning
+at the semantic level without strong supervision. We
+briefly review two typical studies [Zhang et al., 2017a;
+Zhang et al., 2017b] of middle-to-end learning as follows.
+7.1 Active question-answering for learning
+And-Or graphs
+Based on the semantic And-Or representation proposed in
+[Zhang et al., 2016], [Zhang et al., 2017a] has developed a
+method to use active question-answering to semanticize neural
+patterns in conv-layers of a pre-trained CNN and build a
+model for hierarchical object understanding.
+As shown in Fig. 13, the CNN is pre-trained for object
+classification. The method aims to extract a four-layer interpretable
+And-Or graph (AOG) to explain the semantic hierarchy
+hidden in a CNN. The AOG encodes four-layer semantics,
+ranging across the semantic part (OR node), part
+templates (AND nodes), latent patterns (OR nodes), and neural
+units (terminal nodes) on feature maps. In the AOG,
+AND nodes represent compositional regions of a part, and
+OR nodes encode a list of alternative template/deformation
+candidates for a local part. The top part node (OR node) uses
+its children to represent some template candidates for the part.
+Each part template (AND node) in the second layer uses children
+latent patterns to represent its constituent regions. Each
+latent pattern in the third layer (OR node) naturally corresponds
+to a certain range of units within the feature map of
+a filter. The latent pattern selects a unit within this range to
+account for its geometric deformation.
+To learn an AOG, [Zhang et al., 2017a] allows the computer
+to actively identify and ask about objects, whose neural
+patterns cannot be explained by the current AOG. As shown
+in Fig. 14, in each step of the active question-answering, the
+current AOG is used to localize object parts among all the
+unannotated images. The method actively selects objects that
+cannot well fit the AOG, namely unexplained objects. The
+method predicts the potential gain of asking about each unexplained
+object, and thus determines the best sequence of
+questions (e.g. asking about template types and bounding
+boxes of unexplained object parts). In this way, the method
+uses the answers to either refine an existing part template or
+mine latent patterns for new object-part templates, to grow
+AOG branches. Fig. 15 compares the part-localization performance
+of different methods. The QA-based learning exhibits
+significantly higher efficiency than other baselines. The proposed
+method uses about 1/6–1/3 of the part annotations for
+training, but achieves similar or better part-localization per-
+formance than fast-RCNN methods.
+7.2 Interactive manipulations of CNN patterns
+Let a CNN be pre-trained using annotations of object bounding
+boxes for object classification. [Zhang et al., 2017b] has
+explored an interactive method to diagnose knowledge representations
+of a CNN, in order to transfer CNN patterns to
+model object parts. Unlike traditional end-to-end learning of
+CNNs that requires numerous training samples, this method
+mines object part patterns from the CNN in the scenario of
+one/multi-shot learning.
+More specifically, the method uses part annotations on very
+few (e.g. three) object images for supervision. Given a
+bounding-box annotation of a part, the proposed method first
+uses [Zhang et al., 2016] to mine latent patterns, which are related
+to the annotated part, from conv-layers of the CNN. An
+AOG is used to organize all mined patterns as the representation
+of the target part. The method visualizes the mined latent
+patterns and asks people to remove latent patterns unrelated
+to the target part interactively. In this way, people can simply
+prune incorrect latent patterns from AOG branches to refine
+the AOG. Fig. 16 visualizes initially mined patterns and the
+remaining patterns after human interaction. With the guidance
+of human interactions, [Zhang et al., 2017b] has exhibited
+superior performance of part localization.
+8 Prospective trends and conclusions
+In this paper, we have reviewed several research directions
+within the scope of network interpretability. Visualization of
+a neural unit’s patterns was the starting point of understanding
+network representations in the early years. Then, people
+gradually developed methods to analyze feature spaces of
+neural networks and diagnose potential representation flaws
+hidden inside neural networks. At present, disentangling
+chaotic representations of conv-layers into graphical models
+and/or symbolic logic has become an emerging research direction
+to open the black-box of neural networks. The approach
+for transforming a pre-trained CNN into an explanatory
+graph has been proposed and has exhibited significant efficiency
+in knowledge transfer and weakly-supervised learning.
+End-to-end learning interpretable neural networks, whose
+intermediate layers encode comprehensible patterns, is also a
+prospective trend. Interpretable CNNs have been developed,
+where each filter in high conv-layers represents a specific object
+part.
+Furthermore, based on interpretable representations of
+CNN patterns, semantic-level middle-to-end learning has
+been proposed to speed up the learning process. Compared
+to traditional end-to-end learning, middle-to-end learning allows
+human interactions to guide the learning process and can
+be applied with very few annotations for supervision.
+In the future, we believe the middle-to-end learning will
+continuously be a fundamental research direction. In addition,
+based on the semantic hierarchy of an interpretable network,
+debugging CNN representations at the semantic level
+will create new visual applications.
+Acknowledgement
+This work is supported by ONR MURI project N00014-16-1-
+2007 and DARPA XAI Award N66001-17-2-4029, and NSF
+IIS 1423305.</p>
+</blockquote>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../.." title="サイトマップ" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                サイトマップ
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../../diary/8月/" title="8月" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                8月
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
